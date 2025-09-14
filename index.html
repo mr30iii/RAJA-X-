@@ -1,0 +1,3097 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CypherX WhatsApp Bot</title>
+
+    <meta name="theme-color" content="#6366f1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="CypherX Bot">
+    <meta name="description" content="The Next-generation WhatsApp Bot - Deploy CypherX and SPACE-MD with one click">
+
+    <link rel="icon" type="image/png" sizes="192x192" href="https://images.unsplash.com/photo-1633544325196-bcf8bf81ead0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTAwNDR8MHwxfHNlYXJjaHwxfHxsb2dvJTIwYm90JTIwdGVjaG5vbG9neSUyMG1vZGVybnxlbnwwfDJ8fGJsdWV8MTc1NjkxMjU3MXww&ixlib=rb-4.1.0&q=85&w=192&h=192">
+    <link rel="icon" type="image/png" sizes="512x512" href="https://images.unsplash.com/photo-1647335858860-8f4d6b07ea8b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTAwNDR8MHwxfHNlYXJjaHw0fHxsb2dvJTIwYm90JTIwdGVjaG5vbG9neSUyMG1vZGVybnxlbnwwfDJ8fGJsdWV8MTc1NjkxMjU3MXww&ixlib=rb-4.1.0&q=85&w=512&h=512">
+    <link rel="apple-touch-icon" href="https://images.unsplash.com/photo-1633544325196-bcf8bf81ead0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTAwNDR8MHwxfHNlYXJjaHwxfHxsb2dvJTIwYm90JTIwdGVjaG5vbG9neSUyMG1vZGVybnxlbnwwfDJ8fGJsdWV8MTc1NjkxMjU3MXww&ixlib=rb-4.1.0&q=85&w=192&h=192">
+
+    <link rel="manifest" href="manifest.json">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../MjmKPBZzeC8Q.com/ajax/libs/font-awesome/j5MyQuFQcJt5.0/css/HXN7IHbrH0Zs.css">
+
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<style>
+    
+:root {
+  --primary: #6366f1;
+  --primary-light: #818cf8;
+  --primary-dark: #4f46e5;
+  --secondary: #8b5cf6;
+  --secondary-light: #a78bfa;
+  --accent: #06b6d4;
+  --accent-warm: #f59e0b;
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f1f5f9;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  --aurora-1: #6366f1;
+  --aurora-2: #8b5cf6;
+  --aurora-3: #06b6d4;
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+}
+
+.dark-theme {
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-tertiary: #334155;  
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8; 
+  --glass-bg: rgba(0, 0, 0, 0.2);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+.aurora-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  overflow: hidden;
+}
+
+.aurora-layer {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, var(--aurora-1), transparent);
+  animation: aurora-float 20s ease-in-out infinite;
+  opacity: 0.1;
+}
+
+.aurora-layer-1 {
+  background: linear-gradient(45deg, transparent, var(--aurora-1), transparent);
+  animation-delay: 0s;
+  transform: rotate(0deg);
+}
+
+.aurora-layer-2 {
+  background: linear-gradient(135deg, transparent, var(--aurora-2), transparent);
+  animation-delay: -7s;
+  transform: rotate(120deg);
+}
+
+.aurora-layer-3 {
+  background: linear-gradient(225deg, transparent, var(--aurora-3), transparent);
+  animation-delay: -14s;
+  transform: rotate(240deg);
+}
+
+@keyframes aurora-float {
+  0%, 100% { transform: translateX(-50%) translateY(-50%) rotate(0deg) scale(1); }
+  33% { transform: translateX(-40%) translateY(-60%) rotate(120deg) scale(1.1); }
+  66% { transform: translateX(-60%) translateY(-40%) rotate(240deg) scale(0.9); }
+}
+
+.pwa-install-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--glass-border);
+  padding: var(--space-sm);
+  transform: translateY(-100%);
+  transition: transform var(--transition-normal);
+}
+
+.pwa-install-banner.show {
+  transform: translateY(0);
+}
+
+.pwa-banner-content {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pwa-banner-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--primary);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.pwa-banner-text {
+  flex: 1;
+}
+
+.pwa-banner-text h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.pwa-banner-text p {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.pwa-banner-actions {
+  display: flex;
+  gap: var(--space-xs);
+}
+
+.pwa-install-btn, .pwa-dismiss-btn {
+  padding: var(--space-xs) var(--space-sm);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.pwa-install-btn {
+  background: var(--primary);
+  color: white;
+}
+
+.pwa-install-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+.pwa-dismiss-btn {
+  background: transparent;
+  color: var(--text-secondary);
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+}
+
+.pwa-dismiss-btn:hover {
+  background: var(--glass-bg);
+}
+
+/* Theme Toggle */
+.theme-toggle {
+  position: fixed;
+  top: var(--space-lg);
+  right: var(--space-lg);
+  z-index: 100;
+  cursor: pointer;
+}
+
+.theme-toggle-track {
+  width: 60px;
+  height: 32px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-full);
+  position: relative;
+  transition: all var(--transition-normal);
+}
+
+.theme-toggle-thumb {
+  width: 28px;
+  height: 28px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-full);
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-normal);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dark-theme .theme-toggle-thumb {
+  transform: translateX(28px);
+}
+
+.sun-icon, .moon-icon {
+  position: absolute;
+  font-size: 0.875rem;
+  transition: all var(--transition-normal);
+}
+
+.sun-icon {
+  color: var(--accent-warm);
+  opacity: 1;
+}
+
+.moon-icon {
+  color: var(--primary);
+  opacity: 0;
+}
+
+.dark-theme .sun-icon {
+  opacity: 0;
+}
+
+.dark-theme .moon-icon {
+  opacity: 1;
+}
+
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--glass-shadow);
+  transition: all var(--transition-normal);
+}
+
+.glass-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.cypher-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+  position: relative;
+}
+
+.floating-nav {
+  position: fixed;
+  right: var(--space-lg);
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  z-index: 90;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-full);
+  padding: var(--space-sm);
+  box-shadow: var(--glass-shadow);
+}
+
+.nav-item {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  font-size: 1.125rem;
+  text-decoration: none;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+  border-radius: var(--radius-full);
+}
+
+.nav-item:hover::before,
+.nav-item.active::before {
+  opacity: 1;
+}
+
+.nav-item:hover,
+.nav-item.active {
+  color: white;
+  transform: scale(1.1);
+}
+
+.nav-item i {
+  position: relative;
+  z-index: 1;
+}
+
+.nav-item::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  right: 60px;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  font-weight: 500;
+  opacity: 0;
+  pointer-events: none;
+  transition: all var(--transition-normal);
+  white-space: nowrap;
+  box-shadow: var(--glass-shadow);
+}
+
+.nav-item:hover::after {
+  opacity: 1;
+  right: 65px;
+}
+
+.hero-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  min-height: 100vh;
+  padding: var(--space-xl) 0;
+  gap: var(--space-xl);
+  position: relative;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-full);
+  padding: var(--space-xs) var(--space-sm);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--primary);
+  margin-bottom: var(--space-lg);
+  animation: float-gentle 3s ease-in-out infinite;
+}
+
+.hero-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: var(--space-md);
+  position: relative;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-shift 3s ease-in-out infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.floating-elements {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.floating-element {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: var(--primary);
+  border-radius: var(--radius-full);
+  opacity: 0.6;
+}
+
+.floating-element-1 {
+  top: 20%;
+  right: 10%;
+  animation: float-1 4s ease-in-out infinite;
+}
+
+.floating-element-2 {
+  top: 60%;
+  right: 20%;
+  animation: float-2 5s ease-in-out infinite;
+  background: var(--secondary);
+}
+
+.floating-element-3 {
+  top: 40%;
+  right: 5%;
+  animation: float-3 6s ease-in-out infinite;
+  background: var(--accent);
+}
+
+@keyframes float-1 {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+@keyframes float-2 {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-30px) rotate(-180deg); }
+}
+
+@keyframes float-3 {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-25px) rotate(360deg); }
+}
+
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.hero-description {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-lg);
+  line-height: 1.7;
+}
+
+.hero-actions {
+  display: flex;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: 1.125rem;
+  text-decoration: none;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  box-shadow: 0 8px 32px rgba(99, 102, 241, 0.3);
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 48px rgba(99, 102, 241, 0.4);
+}
+
+.secondary-btn {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  color: var(--text-primary);
+}
+
+.secondary-btn:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.btn-glow {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--primary-light), var(--secondary-light));
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+  border-radius: var(--radius-full);
+}
+
+.primary-btn:hover .btn-glow {
+  opacity: 0.2;
+}
+
+.hero-stats {
+  display: flex;
+  gap: var(--space-lg);
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 0.25rem;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.hero-visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image-container {
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-xl);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  animation: float-gentle 6s ease-in-out infinite;
+}
+
+.image-glow {
+  position: absolute;
+  inset: -20px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+  border-radius: var(--radius-xl);
+  opacity: 0.1;
+  filter: blur(20px);
+  z-index: -1;
+  animation: glow-pulse 4s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.1; transform: scale(1); }
+  50% { opacity: 0.2; transform: scale(1.05); }
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.section-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+  background: linear-gradient(135deg, var(--text-primary), var(--text-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.section-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.quick-access-section {
+  padding: var(--space-xl) 0;
+}
+
+.access-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-lg);
+}
+
+.access-card {
+  padding: var(--space-lg);
+  transition: all var(--transition-normal);
+}
+
+.card-header {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.card-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto var(--space-md);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border-radius: var(--radius-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: white;
+  box-shadow: 0 8px 32px rgba(99, 102, 241, 0.3);
+}
+
+.card-header h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: var(--space-xs);
+  color: var(--text-primary);
+}
+
+.card-header p {
+  color: var(--text-secondary);
+}
+
+.server-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: var(--space-sm);
+}
+
+.server-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all var(--transition-normal);
+  font-size: 0.875rem;
+}
+
+.server-btn:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.3);
+}
+
+.server-btn.primary {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  border: none;
+}
+
+.server-btn.primary:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 12px 32px rgba(99, 102, 241, 0.4);
+}
+
+.stats-dashboard {
+  padding: var(--space-xl) 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-lg);
+}
+
+.stats-card {
+  padding: var(--space-lg);
+}
+
+.stats-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-lg);
+}
+
+.stats-header h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.stats-badge {
+  background: linear-gradient(135deg, var(--accent), var(--primary));
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.stat-row:last-child {
+  border-bottom: none;
+}
+
+.stat-info {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  color: var(--text-secondary);
+}
+
+.stat-info i {
+  color: var(--primary);
+}
+
+.stat-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.deploy-section {
+  padding: var(--space-xl) 0;
+}
+
+.deploy-group {
+  margin-bottom: var(--space-xl);
+}
+
+.deploy-group-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: var(--space-lg);
+  color: var(--text-primary);
+  position: relative;
+}
+
+.deploy-group-title::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border-radius: var(--radius-full);
+}
+
+.deploy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-lg);
+}
+
+.deploy-card {
+  padding: var(--space-lg);
+  text-align: center;
+}
+
+.deploy-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.deploy-logo {
+  width: 60px;
+  height: 60px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.deploy-logo img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.deploy-info h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  color: var(--text-primary);
+}
+
+.deploy-info p {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.deploy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-lg);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  border: none;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition-normal);
+  cursor: pointer;
+}
+
+.deploy-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.3);
+}
+
+.deploy-btn.coming-soon {
+  background: var(--text-muted);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.deploy-btn.coming-soon:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.install-section {
+  padding: var(--space-xl) 0;
+}
+
+.install-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.install-tabs {
+  overflow: hidden;
+}
+
+.tab-buttons {
+  display: flex;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  overflow-x: auto;
+}
+
+.tab-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: var(--space-md);
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  position: relative;
+  white-space: nowrap;
+  min-width: 140px;
+}
+
+.tab-btn.active {
+  color: var(--primary);
+}
+
+.tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+}
+
+.tab-btn:hover:not(.active) {
+  color: var(--text-primary);
+  background: var(--glass-bg);
+}
+
+.tab-content {
+  display: none;
+  padding: var(--space-xl);
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-top: none;
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.tab-header {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.tab-header h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+  color: var(--text-primary);
+}
+
+.tab-header p {
+  color: var(--text-secondary);
+}
+
+.prerequisites {
+  margin-bottom: var(--space-lg);
+}
+
+.prerequisites h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: var(--space-md);
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  color: var(--primary);
+}
+
+.prerequisites ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-sm);
+}
+
+.prerequisites li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+}
+
+.prerequisites i {
+  color: var(--primary);
+  width: 20px;
+  text-align: center;
+}
+
+.code-section {
+  margin-bottom: var(--space-lg);
+}
+
+.code-block {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--glass-shadow);
+}
+
+.code-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-md);
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--glass-border);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.copy-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-sm);
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.copy-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+.copy-btn.copied {
+  background: var(--accent);
+}
+
+pre {
+  margin: 0;
+  padding: var(--space-lg);
+  overflow-x: auto;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+
+code {
+  font-family: inherit;
+}
+
+.install-notes {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.note-card {
+  display: flex;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-left: 4px solid var(--primary);
+  border-radius: var(--radius-md);
+}
+
+.note-card.warning {
+  border-left-color: var(--accent-warm);
+}
+
+.note-card i {
+  color: var(--primary);
+  margin-top: 0.125rem;
+}
+
+.note-card.warning i {
+  color: var(--accent-warm);
+}
+
+.note-card h5 {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: var(--text-primary);
+}
+
+.note-card p {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.note-card code {
+  background: var(--glass-bg);
+  padding: 0.125rem 0.375rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.8125rem;
+}
+
+.pm2-commands-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.command-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+}
+
+.command-card h5 {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+  color: var(--text-primary);
+}
+
+.command-input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-sm);
+}
+
+.command-input code {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.8125rem;
+  color: var(--text-primary);
+}
+
+.copy-btn.small {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  min-width: auto;
+}
+
+.faq-section {
+  padding: var(--space-xl) 0;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--space-lg);
+}
+
+.faq-item {
+  padding: var(--space-lg);
+}
+
+.faq-question {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.faq-question i {
+  color: var(--primary);
+  margin-top: 0.125rem;
+  flex-shrink: 0;
+}
+
+.faq-question h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.faq-item p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.faq-link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px dashed currentColor;
+  transition: all var(--transition-fast);
+}
+
+.faq-link:hover {
+  color: var(--secondary);
+  border-bottom-style: solid;
+}
+
+.disclaimer-section {
+  padding: var(--space-xl) 0;
+}
+
+.disclaimer-card {
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.disclaimer-header {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  padding: var(--space-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.disclaimer-header i {
+  font-size: 1.5rem;
+}
+
+.disclaimer-header h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.disclaimer-content {
+  padding: var(--space-xl);
+}
+
+.disclaimer-content p {
+  margin-bottom: var(--space-md);
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.disclaimer-content strong {
+  color: var(--text-primary);
+}
+
+.agree-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  width: 100%;
+  padding: var(--space-md);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  border: none;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.agree-btn:hover {
+  background: linear-gradient(135deg, var(--primary-dark), var(--secondary));
+  transform: translateY(-1px);
+}
+
+.main-footer {
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--glass-border);
+  padding: var(--space-xl) 0 var(--space-lg);
+  margin-top: var(--space-xl);
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--space-xl);
+  margin-bottom: var(--space-xl);
+}
+
+.footer-brand {
+  max-width: 400px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.logo-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.25rem;
+}
+
+.logo-text h4 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  color: var(--text-primary);
+}
+
+.logo-text p {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.footer-brand > p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+.link-group h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: var(--space-md);
+  color: var(--text-primary);
+  position: relative;
+  padding-bottom: var(--space-xs);
+}
+
+.link-group h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border-radius: var(--radius-full);
+}
+
+.link-group a {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  color: var(--text-secondary);
+  text-decoration: none;
+  margin-bottom: var(--space-sm);
+  transition: all var(--transition-fast);
+  font-size: 0.875rem;
+}
+
+.link-group a:hover {
+  color: var(--primary);
+  transform: translateX(4px);
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--glass-border);
+  padding-top: var(--space-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.social-links {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.social-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  font-size: 1.125rem;
+  text-decoration: none;
+  transition: all var(--transition-normal);
+}
+
+.social-icon:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.3);
+}
+
+.copyright {
+  text-align: right;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.copyright p {
+  margin-bottom: 0.25rem;
+}
+
+.copyright i {
+  color: var(--accent-warm);
+}
+
+@media (max-width: 1024px) {
+  .hero-section {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: var(--space-lg);
+  }
+  
+  .floating-nav {
+    bottom: var(--space-lg);
+    right: 50%;
+    top: auto;
+    transform: translateX(50%);
+    flex-direction: row;
+  }
+  
+  .nav-item::after {
+    bottom: 60px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+  
+  .nav-item:hover::after {
+    bottom: 65px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+  }
+  
+  .cypher-container {
+    padding: 0 var(--space-md);
+  }
+  
+  .theme-toggle {
+    top: var(--space-md);
+    right: var(--space-md);
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hero-stats {
+    justify-content: center;
+  }
+  
+  .tab-buttons {
+    flex-wrap: wrap;
+  }
+  
+  .tab-btn {
+    flex: 1 0 50%;
+    min-width: 120px;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+  
+  .footer-links {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .copyright {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .access-grid,
+  .stats-grid,
+  .deploy-grid,
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .server-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .pm2-commands-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .prerequisites ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (prefers-contrast: high) {
+  :root {
+    --glass-bg: rgba(255, 255, 255, 0.9);
+    --glass-border: rgba(0, 0, 0, 0.3);
+  }
+  
+  .dark-theme {
+    --glass-bg: rgba(0, 0, 0, 0.9);
+    --glass-border: rgba(255, 255, 255, 0.3);
+  }
+}
+
+@media print {
+  .aurora-background,
+  .floating-nav,
+  .theme-toggle,
+  .pwa-install-banner {
+    display: none !important;
+  }
+  
+  .glass-card {
+    background: white !important;
+    border: 1px solid #ccc !important;
+    box-shadow: none !important;
+  }
+}
+</style>
+
+<body class="light-theme">
+    <div class="aurora-background">
+        <div class="aurora-layer aurora-layer-1"></div>
+        <div class="aurora-layer aurora-layer-2"></div>
+        <div class="aurora-layer aurora-layer-3"></div>
+    </div>
+
+    <div class="pwa-install-banner" id="pwa-banner" style="display: none;">
+        <div class="pwa-banner-content">
+            <div class="pwa-banner-icon">
+                <i class="fas fa-download"></i>
+            </div>
+            <div class="pwa-banner-text">
+                <h4>Install 𝐑𝐀𝐉𝐀-X App</h4>
+                <p>Get the full experience with our PWA</p>
+            </div>
+            <div class="pwa-banner-actions">
+                <button class="pwa-install-btn" id="pwa-install">Install</button>
+                <button class="pwa-dismiss-btn" id="pwa-dismiss">x</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="theme-toggle" id="theme-toggle">
+        <div class="theme-toggle-track">
+            <div class="theme-toggle-thumb">
+                <i class="fas fa-sun sun-icon"></i>
+                <i class="fas fa-moon moon-icon"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="cypher-container">
+        <nav class="floating-nav">
+            <a href="#home" class="nav-item active" data-tooltip="Home">
+                <i class="fas fa-home"></i>
+            </a>
+            <a href="#features" class="nav-item" data-tooltip="Features">
+                <i class="fas fa-star"></i>
+            </a>
+            <a href="#deploy" class="nav-item" data-tooltip="Deploy">
+                <i class="fas fa-rocket"></i>
+            </a>
+            <a href="#install" class="nav-item" data-tooltip="Install">
+                <i class="fas fa-download"></i>
+            </a>
+        </nav>
+
+        <header class="hero-section" id="home">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-robot"></i>
+                    <span>Next-Gen Bot Platform</span>
+                </div>
+
+                <h1 class="hero-title">
+                    <span class="gradient-text">RAJA-X</span>
+                    <div class="floating-elements">
+                        <div class="floating-element floating-element-1"></div>
+                        <div class="floating-element floating-element-2"></div>
+                        <div class="floating-element floating-element-3"></div>
+                    </div>
+                </h1>
+
+                <p class="hero-subtitle">The Ultimate WhatsApp Bot Experience</p>
+                <p class="hero-description">Deploy powerful 𝐑𝐀𝐉𝐀-X and SPACE-MD bots with advanced features, multi-session support, and high reliability.</p>
+
+                <div class="hero-actions">
+                    <a href="#deploy" class="hero-btn primary-btn">
+                        <i class="fas fa-bolt"></i>
+                        <span>Quick Deploy</span>
+                        <div class="btn-glow"></div>
+                    </a>
+                    <a href="#install" class="hero-btn secondary-btn">
+                        <i class="fas fa-code"></i>
+                        <span>Manual Install</span>
+                    </a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" id="hero-users">50K+</div>
+                        <div class="stat-label">Active Users</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">300+</div>
+                        <div class="stat-label">Features</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">99.9%</div>
+                        <div class="stat-label">Uptime</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="hero-image-container">
+                    <img src="../YVEh9J6GzBQp.co/Q4QCHYd/DeEzP91DjWWM.jpg" alt="CYPHER-X Bot Interface by Tylor" class="hero-image">
+                    <div class="image-glow"></div>
+                </div>
+            </div>
+        </header>
+
+        <section class="quick-access-section" id="features">
+            <div class="section-header">
+                <h2 class="section-title">Quick Access Hub</h2>
+                <p class="section-subtitle">Everything you need to get started with RAJA-X and SPACE-MD</p>
+            </div>
+
+            <div class="access-grid">
+                <!-- <div class="glass-card access-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-link"></i>
+                        </div>
+                        <h3>Pair Code Servers</h3>
+                        <p>Generate session codes instantly</p>
+                    </div>
+                    <div class="server-grid">
+                        <a href="https://newpair1-76e740c492f9.herokuapp.com/" target="_blank" class="server-btn">
+                            <span>Server 1</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a href="https://pair.cypherx.space/" target="_blank" class="server-btn">
+                            <span>Server 2</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a href="https://newpair2-9c095774b1aa.herokuapp.com/" target="_blank" class="server-btn">
+                            <span>Server 3</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a href="https://newpair3-1db1fac524ee.herokuapp.com/" target="_blank" class="server-btn">
+                            <span>Server 4</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a href="https://newpair4-c73a5ee97fbd.herokuapp.com/" target="_blank" class="server-btn">
+                            <span>Server 5</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a href="https://newpair5-bbfd8883c459.herokuapp.com/" target="_blank" class="server-btn">
+                            <span>Server 6</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a href="https://newpair6-ea742f949f31.herokuapp.com/" target="_blank" class="server-btn">
+                            <span>Server 7</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div> -->
+                </div>
+
+                <div class="glass-card access-card">
+                    <div class="card-header">
+                        <!-- <div class="card-icon">
+                            <i class="fas fa-qrcode"></i>
+                        </div>
+                        <h3>QR Code Generator</h3>
+                        <p>Scan to connect instantly</p>
+                    </div>
+                    <div class="server-grid">
+                        <a href="https://newqr1-4e84d9a3550d.herokuapp.com/" target="_blank" class="server-btn">
+                            <span>QR Server 1</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a href="https://newqr2-9b2571c653cf.herokuapp.com/" target="_blank" class="server-btn">
+                            <span>QR Server 2</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div> -->
+                </div>
+
+                <div class="glass-card access-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <h3>𝐑𝐀𝐉𝐀-X Download</h3>
+                        <p>Get the latest release</p>
+                    </div>
+                    <div class="server-grid">
+                        <a href="#" id="cypherx-download-zip" class="server-btn primary" target="_blank" rel="noopener noreferrer">
+                            <span>Latest Release</span>
+                            <i class="fas fa-download"></i>
+                        </a>
+                        <a href="https://github.com/mr30iii/RAJA-X.git" target="_blank" class="server-btn">
+                            <span>GitHub Repo</span>
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- <div class="glass-card access-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>SPACE-MD Download</h3>
+                        <p>Multi-session bot platform</p>
+                    </div>
+                    <div class="server-grid">
+                        <a href="#" id="spacemd-download-zip" class="server-btn primary" target="_blank" rel="noopener noreferrer">
+                            <span>Source Code</span>
+                            <i class="fas fa-download"></i>
+                        </a>
+                        <a href="https://github.com/Dark-Xploit/SPACE-MD" target="_blank" class="server-btn">
+                            <span>GitHub Repo</span>
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div> -->
+            </div>
+        </section>
+
+        <section class="stats-dashboard">
+            <div class="stats-grid">
+                <div class="glass-card stats-card">
+                    <div class="stats-header">
+                        <h3>RAJA-X Analytics</h3>
+                        <div class="stats-badge">Live</div>
+                    </div>
+                    <div class="stats-content">
+                        <div class="stat-row">
+                            <div class="stat-info">
+                                <i class="fas fa-star"></i>
+                                <span>GitHub Stars</span>
+                            </div>
+                            <div class="stat-value" id="cypherx-stars">...</div>
+                        </div>
+                        <div class="stat-row">
+                            <div class="stat-info">
+                                <i class="fas fa-code-branch"></i>
+                                <span>Forks</span>
+                            </div>
+                            <div class="stat-value" id="cypherx-forks">...</div>
+                        </div>
+                        <div class="stat-row">
+                            <div class="stat-info">
+                                <i class="fas fa-clock"></i>
+                                <span>Uptime</span>
+                            </div>
+                            <div class="stat-value">99.8%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="glass-card stats-card">
+                    <div class="stats-header">
+                        <h3>SPACE-MD Analytics</h3>
+                        <div class="stats-badge">Live</div>
+                    </div>
+                    <div class="stats-content">
+                        <div class="stat-row">
+                            <div class="stat-info">
+                                <i class="fas fa-star"></i>
+                                <span>GitHub Stars</span>
+                            </div>
+                            <div class="stat-value" id="spacemd-stars">...</div>
+                        </div>
+                        <div class="stat-row">
+                            <div class="stat-info">
+                                <i class="fas fa-code-branch"></i>
+                                <span>Forks</span>
+                            </div>
+                            <div class="stat-value" id="spacemd-forks">...</div>
+                        </div>
+                        <div class="stat-row">
+                            <div class="stat-info">
+                                <i class="fas fa-clock"></i>
+                                <span>Uptime</span>
+                            </div>
+                            <div class="stat-value">99.5%</div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </section>
+        
+        <!-- <section class="deploy-section" id="deploy">
+            <div class="section-header">
+                <h2 class="section-title">One-Click Deployment</h2>
+                <p class="section-subtitle">Deploy your bots instantly on your preferred platform</p>
+            </div> -->
+            
+            <!-- <div class="deploy-group">
+                <h3 class="deploy-group-title">RAJA-X Deployment</h3>
+                <div class="deploy-grid">
+                    <div class="glass-card deploy-card heroku-card">
+                        <div class="deploy-header">
+                            <div class="deploy-logo">
+                                <img src="../UAH9fytchcwe.com/23zBhHJREYCg.ico" alt="Heroku" width="40" height="40">
+                            </div>
+                            <div class="deploy-info">
+                                <h4>Heroku</h4>
+                                <p>Cloud platform deployment</p>
+                            </div>
+                        </div>
+                        <a href="/deploy" class="deploy-btn">
+                            <i class="fas fa-rocket"></i>
+                            <span>Deploy Now</span>
+                        </a>
+                    </div> -->
+
+                    <!-- <div class="glass-card deploy-card replit-card">
+                        <div class="deploy-header">
+                            <div class="deploy-logo">
+                                <img src="https://repl.it/favicon.ico" alt="Replit" width="40" height="40">
+                            </div>
+                            <div class="deploy-info">
+                                <h4>Replit</h4>
+                                <p>Online IDE deployment</p>
+                            </div>
+                        </div>
+                        <a href="https://repl.it/github/Dark-Xploit/CypherX" target="_blank" class="deploy-btn">
+                            <i class="fas fa-code"></i>
+                            <span>Run on Replit</span>
+                        </a>
+                    </div> -->
+
+                    <!-- <div class="glass-card deploy-card railway-card">
+                        <div class="deploy-header">
+                            <div class="deploy-logo">
+                                <img src="../nmLfEpjk7D3P.com/6oMBfxeiDs7X.ico" alt="Railway" width="40" height="40">
+                            </div>
+                            <div class="deploy-info">
+                                <h4>Railway</h4>
+                                <p>Modern deployment platform</p>
+                            </div>
+                        </div>
+                        <div class="deploy-btn coming-soon">
+                            <i class="fas fa-clock"></i>
+                            <span>Coming Soon</span>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+
+            <!-- <div class="deploy-group">
+                <h3 class="deploy-group-title">SPACE-MD Deployment</h3>
+                <div class="deploy-grid">
+                    <div class="glass-card deploy-card heroku-card">
+                        <div class="deploy-header">
+                            <div class="deploy-logo">
+                                <img src="../UAH9fytchcwe.com/23zBhHJREYCg.ico" alt="Heroku" width="40" height="40">
+                            </div>
+                            <div class="deploy-info">
+                                <h4>Heroku</h4>
+                                <p>Cloud platform deployment</p>
+                            </div>
+                        </div>
+                        <a href="https://dashboard.heroku.com/new?template=https://github.com/Dark-Xploit/SPACE-MD" class="deploy-btn">
+                            <i class="fas fa-rocket"></i>
+                            <span>Deploy Now</span>
+                        </a>
+                    </div>
+
+                    <div class="glass-card deploy-card replit-card">
+                        <div class="deploy-header">
+                            <div class="deploy-logo">
+                                <img src="https://repl.it/favicon.ico" alt="Replit" width="40" height="40">
+                            </div>
+                            <div class="deploy-info">
+                                <h4>Replit</h4>
+                                <p>Online IDE deployment</p>
+                            </div>
+                        </div>
+                        <a href="https://repl.it/github/Dark-Xploit/SPACE-MD" target="_blank" class="deploy-btn">
+                            <i class="fas fa-code"></i>
+                            <span>Run on Replit</span>
+                        </a>
+                    </div>
+
+                    <div class="glass-card deploy-card railway-card">
+                        <div class="deploy-header">
+                            <div class="deploy-logo">
+                                <img src="../nmLfEpjk7D3P.com/6oMBfxeiDs7X.ico" alt="Railway" width="40" height="40">
+                            </div>
+                            <div class="deploy-info">
+                                <h4>Railway</h4>
+                                <p>Modern deployment platform</p>
+                            </div>
+                        </div>
+                        <div class="deploy-btn coming-soon">
+                            <i class="fas fa-clock"></i>
+                            <span>Coming Soon</span>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        <!-- </section> -->
+
+        <section class="install-section" id="install">
+            <div class="section-header">
+                <h2 class="section-title">Installation Guide</h2>
+                <p class="section-subtitle">Choose your preferred installation method</p>
+            </div>
+
+            <div class="glass-card install-container">
+                <div class="install-tabs">
+                    <div class="tab-buttons">
+                        <button class="tab-btn active" data-tab="windows">
+                            <i class="fab fa-windows"></i>
+                            <span>Windows PowerShell</span>
+                        </button>
+                        <button class="tab-btn" data-tab="vps">
+                            <i class="fas fa-server"></i>
+                            <span>VPS Setup</span>
+                        </button>
+                        <button class="tab-btn" data-tab="termux">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Termux (Android)</span>
+                        </button>
+                        <button class="tab-btn" data-tab="pm2">
+                            <i class="fas fa-cogs"></i>
+                            <span>PM2 Manager</span>
+                        </button>
+                    </div>
+
+                    <div class="tab-content active" id="windows-tab">
+                        <div class="tab-header">
+                            <h3><i class="fab fa-windows"></i> Windows PowerShell Installation</h3>
+                            <p>Install CypherX or SPACE-MD on Windows using PowerShell</p>
+                        </div>
+
+                        <div class="prerequisites">
+                            <h4><i class="fas fa-check-circle"></i> Prerequisites</h4>
+                            <ul>
+                                <li><i class="fab fa-windows"></i> Windows 10/11</li>
+                                <li><i class="fas fa-terminal"></i> PowerShell (Admin)</li>
+                                <li><i class="fas fa-wifi"></i> Internet connection</li>
+                            </ul>
+                        </div>
+
+                        <div class="code-section">
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span><i class="fas fa-terminal"></i> PowerShell Commands</span>
+                                    <button class="copy-btn" data-copy="windows-commands">
+                                        <i class="far fa-copy"></i> Copy All
+                                    </button>
+                                </div>
+                                <pre><code id="windows-commands"># Update system
+winget upgrade --all
+
+# Install required software
+winget install Git.Git
+winget install Gyan.FFmpeg
+winget install ImageMagick.ImageMagick
+winget install OpenJS.NodeJS.LTS
+
+# IMPORTANT: Restart PowerShell before proceeding
+# Press Ctrl+C to stop, then reopen PowerShell as Administrator
+
+# Clone repository (Replace with CypherX for CypherX bot)
+git clone https://github.com/<your-username>/SPACE-MD.git
+cd SPACE-MD
+
+# Install dependencies
+npm install
+
+# Start bot
+npm start</your-username></code></pre>
+                            </div>
+                        </div>
+
+                        <div class="install-notes">
+                            <div class="note-card">
+                                <i class="fas fa-info-circle"></i>
+                                <div>
+                                    <h5>For CypherX Bot</h5>
+                                    <p>Replace <code>SPACE-MD</code> with <code>CypherX</code> in the git clone command</p>
+                                </div>
+                            </div>
+                            <div class="note-card warning">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <div>
+                                    <h5>Important</h5>
+                                    <p>You must restart PowerShell after installing Node.js before proceeding with the git clone step</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="vps-tab">
+                        <div class="tab-header">
+                            <h3><i class="fas fa-server"></i> VPS Installation</h3>
+                            <p>Deploy on Ubuntu/Debian VPS servers</p>
+                        </div>
+
+                        <div class="prerequisites">
+                            <h4><i class="fas fa-check-circle"></i> Prerequisites</h4>
+                            <ul>
+                                <li><i class="fab fa-ubuntu"></i> Ubuntu/Debian VPS</li>
+                                <li><i class="fas fa-terminal"></i> SSH access</li>
+                                <li><i class="fas fa-memory"></i> Minimum 1GB RAM</li>
+                            </ul>
+                        </div>
+
+                        <div class="code-section">
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span><i class="fas fa-terminal"></i> VPS Installation</span>
+                                    <button class="copy-btn" data-copy="vps-commands">
+                                        <i class="far fa-copy"></i> Copy All
+                                    </button>
+                                </div>
+                                <pre><code id="vps-commands">sudo apt update && sudo apt upgrade -y
+sudo apt install -y git imagemagick ffmpeg libwebp-dev
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+source ~/.bashrc
+nvm install 20
+nvm use 20
+git clone https://github.com/<your-username>/SPACE-MD.git
+cd SPACE-MD
+npm install --build-from-source
+npm start</your-username></code></pre>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="termux-tab">
+                        <div class="tab-header">
+                            <h3><i class="fas fa-mobile-alt"></i> Termux Installation</h3>
+                            <p>Run on Android devices using Termux</p>
+                        </div>
+
+                        <div class="prerequisites">
+                            <h4><i class="fas fa-check-circle"></i> Prerequisites</h4>
+                            <ul>
+                                <li><i class="fas fa-mobile-alt"></i> Termux (from F-Droid)</li>
+                                <li><i class="fas fa-sd-card"></i> Storage permission</li>
+                                <li><i class="fas fa-battery-full"></i> Stable power source</li>
+                            </ul>
+                        </div>
+
+                        <div class="code-section">
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span><i class="fas fa-terminal"></i> Termux Commands</span>
+                                    <button class="copy-btn" data-copy="termux-commands">
+                                        <i class="far fa-copy"></i> Copy All
+                                    </button>
+                                </div>
+                                <pre><code id="termux-commands">pkg update -y && pkg upgrade -y
+pkg install -y git nodejs-lts python make clang libsqlite
+termux-setup-storage
+cd ~
+git clone https://github.com/<your-username>/SPACE-MD.git
+cd SPACE-MD
+npm config set python python3
+npm install --build-from-source
+npm start</your-username></code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="pm2-tab">
+                        <div class="tab-header">
+                            <h3><i class="fas fa-cogs"></i> PM2 Process Manager</h3>
+                            <p>Manage your bot with PM2 for production deployment</p>
+                        </div>
+
+                        <div class="prerequisites">
+                            <h4><i class="fas fa-check-circle"></i> Prerequisites</h4>
+                            <ul>
+                                <li><i class="fas fa-server"></i> Already installed bot</li>
+                                <li><i class="fas fa-plug"></i> Node.js environment</li>
+                                <li><i class="fas fa-shield-alt"></i> Production server</li>
+                            </ul>
+                        </div>
+
+                        <div class="code-section">
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span><i class="fas fa-terminal"></i> PM2 Setup</span>
+                                    <button class="copy-btn" data-copy="pm2-commands">
+                                        <i class="far fa-copy"></i> Copy All
+                                    </button>
+                                </div>
+                                <pre><code id="pm2-commands">npm install -g pm2
+pm2 start index.js --name SPACE-MD
+pm2 save
+pm2 startup
+pm2 logs SPACE-MD</code></pre>
+                            </div>
+
+                            <div class="pm2-commands-grid">
+                                <div class="command-card">
+                                    <h5><i class="fas fa-stop"></i> Stop Bot</h5>
+                                    <div class="command-input">
+                                        <code>pm2 stop SPACE-MD</code>
+                                        <button class="copy-btn small" data-copy-text="pm2 stop SPACE-MD">
+                                            <i class="far fa-copy"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="command-card">
+                                    <h5><i class="fas fa-redo"></i> Restart Bot</h5>
+                                    <div class="command-input">
+                                        <code>pm2 restart SPACE-MD</code>
+                                        <button class="copy-btn small" data-copy-text="pm2 restart SPACE-MD">
+                                            <i class="far fa-copy"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="command-card">
+                                    <h5><i class="fas fa-trash"></i> Delete Process</h5>
+                                    <div class="command-input">
+                                        <code>pm2 delete SPACE-MD</code>
+                                        <button class="copy-btn small" data-copy-text="pm2 delete SPACE-MD">
+                                            <i class="far fa-copy"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="command-card">
+                                    <h5><i class="fas fa-list"></i> List Processes</h5>
+                                    <div class="command-input">
+                                        <code>pm2 list</code>
+                                        <button class="copy-btn small" data-copy-text="pm2 list">
+                                            <i class="far fa-copy"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="command-card">
+                                    <h5><i class="fas fa-chart-line"></i> Monitor</h5>
+                                    <div class="command-input">
+                                        <code>pm2 monit</code>
+                                        <button class="copy-btn small" data-copy-text="pm2 monit">
+                                            <i class="far fa-copy"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="command-card">
+                                    <h5><i class="fas fa-file-alt"></i> View Logs</h5>
+                                    <div class="command-input">
+                                        <code>pm2 logs SPACE-MD</code>
+                                        <button class="copy-btn small" data-copy-text="pm2 logs SPACE-MD">
+                                            <i class="far fa-copy"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Everything you need to know about CypherX and SPACE-MD</p>
+            </div>
+
+            <div class="faq-grid">
+                <div class="glass-card faq-item">
+                    <div class="faq-question">
+                        <i class="fas fa-question-circle"></i>
+                        <h3>Is CypherX and SPACE-MD free to use?</h3>
+                    </div>
+                    <p>Yes, CypherX is free to use, but not open-source. However, SPACE-MD, its multi-session version, has some premium functions.</p>
+                </div>
+
+                <div class="glass-card faq-item">
+                    <div class="faq-question">
+                        <i class="fas fa-question-circle"></i>
+                        <h3>Does CypherX/SPACE-MD violate WhatsApp's terms?</h3>
+                    </div>
+                    <p>While we've designed CypherX and SPACE-MD to minimize policy violations, any automation of WhatsApp may conflict with their terms. We recommend using a secondary account and being mindful of usage patterns.</p>
+                </div>
+
+                <div class="glass-card faq-item">
+                    <div class="faq-question">
+                        <i class="fas fa-question-circle"></i>
+                        <h3>What is SPACE-MD?</h3>
+                    </div>
+                    <p>SPACE-MD is the multi-session version of CypherX, allowing you to connect multiple WhatsApp accounts on the same bot.</p>
+                </div>
+
+                <div class="glass-card faq-item">
+                    <div class="faq-question">
+                        <i class="fas fa-question-circle"></i>
+                        <h3>Where can I deploy RAJA-X?</h3>
+                    </div>
+                    <p>You can deploy RAJA-X on Heroku, Render and pterodactyl panels like katabump and bot hosting.</p>
+                </div>
+
+                <div class="glass-card faq-item">
+                    <div class="faq-question">
+                        <i class="fas fa-question-circle"></i>
+                        <h3>How do I get support?</h3>
+                    </div>
+                    <p>Join our <a href="https://t.me/cypherx_support" target="_blank" class="faq-link">Telegram community</a> for peer support. For enterprise needs, consider our <a href="/cdn-cgi/l/email-protection#6203060f0b0c22011b120a07101a4c1112030107" class="faq-link">premium support options</a>.</p>
+                </div>
+
+                <div class="glass-card faq-item">
+                    <div class="faq-question">
+                        <i class="fas fa-question-circle"></i>
+                        <h3>How do I update RAJA-X?</h3>
+                    </div>
+                    <p>RAJA-X and automatically update themselves to the latest version whenever they detect a new update irregardless of where you deployed. You can also facilitate the process by restarting.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="disclaimer-section">
+            <div class="glass-card disclaimer-card">
+                <div class="disclaimer-header">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h3>Important Notice</h3>
+                </div>
+                <div class="disclaimer-content">
+                    <p>
+                        CypherX is offered <strong>strictly for personal and educational use only</strong>. The developers do not promote misuse, automation abuse, or violation of any platform's terms of service.
+                        <br><br>
+                        <strong>Use at your own risk.</strong> We are <u>not</u> responsible for any actions taken against your account due to how you choose to use this tool.
+                        <br><br>
+                        Please use responsibly; if you're unsure, it's better not to use it.
+                        <br><br>
+                        <strong>By continuing to use CypherX, you agree that you understand and accept these terms fully, including any consequences that may arise from misuse.</strong>
+                    </p>
+                </div>
+                <button class="agree-btn" id="disclaimer-agree">
+                    <i class="fas fa-check"></i> I Understand & Agree
+                </button>
+            </div>
+        </section>
+
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo-icon">RAJA</div>
+                        <div class="logo-text">
+                            <h4>𝐑𝐀𝐉𝐀-X</h4>
+                            <p>Next-Gen Bot Platform</p>
+                        </div>
+                    </div>
+                    <p>Empowering users with advanced WhatsApp bot solutions since 2023. Built with passion by developers, for developers.</p>
+                </div>
+
+                <!-- <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Resources</h4>
+                        <a href="https://github.com/Dark-Xploit/CypherX" target="_blank">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="#install">
+                            <i class="fas fa-book"></i> Documentation
+                        </a>
+                        <a href="https://github.com/Dark-Xploit/CypherX/releases">
+                            <i class="fas fa-download"></i> Releases
+                        </a>
+                    </div> -->
+
+                    <div class="link-group">
+                        <h4>Community</h4>
+                        <a href="https://t.me/Pro1coder">
+                            <i class="fab fa-telegram"></i> Telegram
+                        </a>
+                        <a href="https://whatsapp.com/channel/0029VbBTcfJCHDys1Q2ltf0n">
+                            <i class="fas fa-life-ring"></i> Support
+                        </a>
+                        <a href="#">
+                            <i class="fab fa-discord"></i> Discord
+                        </a>
+                    </div>
+
+                    <!-- <div class="link-group">
+                        <h4>Legal</h4>
+                        <a href="#">
+                            <i class="fas fa-file-contract"></i> Terms
+                        </a>
+                        <a href="#">
+                            <i class="fas fa-shield-alt"></i> Privacy
+                        </a>
+                        <a href="#disclaimer">
+                            <i class="fas fa-exclamation-triangle"></i> Disclaimer
+                        </a>
+                    </div> -->
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <a href="https://github.com/mr30iii" class="social-icon" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://t.me/Pro1coder" class="social-icon" target="_blank">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+
+                <div class="copyright">
+                    <p>� 2025 RAJAX Bot. All rights reserved.</p>
+                    <p>Made with <i class="fas fa-heart"></i> by <strong>RAJA</strong></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="module" src="script.js"></script>
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" data-cf-beacon="{" version":"2024.11.0","token":"6bb389be2b444e1bbd0e4de44d8cbce8","r":1,"server_timing":{"name":{"cfcachestatus":true,"cfedge":true,"cfextpri":true,"cfl4":true,"cforigin":true,"cfspeedbrain":true},"location_startswith":null}}"="" crossorigin="anonymous"></script>
+<script>
+    
+class ThemeManager {
+  constructor() {
+    this.theme = localStorage.getItem('cypherx-theme') || 
+                 (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    this.init();
+  }
+
+  init() {
+    this.applyTheme();
+    this.setupToggle();
+    this.watchSystemTheme();
+  }
+
+  applyTheme() {
+    document.body.className = `${this.theme}-theme`;
+    localStorage.setItem('cypherx-theme', this.theme);
+    
+    const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+    if (metaThemeColor) {
+      metaThemeColor.content = this.theme === 'dark' ? '#0f172a' : '#6366f1';
+    }
+  }
+
+  toggle() {
+    this.theme = this.theme === 'light' ? 'dark' : 'light';
+    this.applyTheme();
+    
+    document.body.style.transition = 'background-color 0.3s ease, color 0.3s ease';
+    setTimeout(() => {
+      document.body.style.transition = '';
+    }, 300);
+  }
+
+  setupToggle() {
+    const toggle = document.getElementById('theme-toggle');
+    if (toggle) {
+      toggle.addEventListener('click', () => this.toggle());
+    }
+  }
+
+  watchSystemTheme() {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    mediaQuery.addListener((e) => {
+      if (!localStorage.getItem('cypherx-theme')) {
+        this.theme = e.matches ? 'dark' : 'light';
+        this.applyTheme();
+      }
+    });
+  }
+}
+
+class PWAManager {
+  constructor() {
+    this.deferredPrompt = null;
+    this.init();
+  }
+
+  async init() {
+    await this.registerServiceWorker();
+    this.setupInstallPrompt();
+    this.setupInstallBanner();
+  }
+
+  async registerServiceWorker() {
+    if ('serviceWorker' in navigator) {
+      try {
+        const registration = await navigator.serviceWorker.register('/sw.js');
+        console.log('Service Worker registered successfully:', registration);
+        
+        registration.addEventListener('updatefound', () => {
+          const newWorker = registration.installing;
+          newWorker.addEventListener('statechange', () => {
+            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+              this.showUpdateNotification();
+            }
+          });
+        });
+      } catch (error) {
+        console.error('Service Worker registration failed:', error);
+      }
+    }
+  }
+
+  setupInstallPrompt() {
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      this.deferredPrompt = e;
+      this.showInstallBanner();
+    });
+
+    window.addEventListener('appinstalled', () => {
+      console.log('PWA installed successfully');
+      this.hideInstallBanner();
+      this.deferredPrompt = null;
+    });
+  }
+
+  setupInstallBanner() {
+    const installBtn = document.getElementById('pwa-install');
+    const dismissBtn = document.getElementById('pwa-dismiss');
+
+    if (installBtn) {
+      installBtn.addEventListener('click', () => this.installApp());
+    }
+
+    if (dismissBtn) {
+      dismissBtn.addEventListener('click', () => this.hideInstallBanner());
+    }
+  }
+
+  showInstallBanner() {
+    const banner = document.getElementById('pwa-banner');
+    if (banner && !this.isInstalled()) {
+      banner.style.display = 'block';
+      setTimeout(() => banner.classList.add('show'), 100);
+    }
+  }
+
+  hideInstallBanner() {
+    const banner = document.getElementById('pwa-banner');
+    if (banner) {
+      banner.classList.remove('show');
+      setTimeout(() => banner.style.display = 'none', 300);
+    }
+  }
+
+  async installApp() {
+    if (!this.deferredPrompt) return;
+
+    this.deferredPrompt.prompt();
+    const { outcome } = await this.deferredPrompt.userChoice;
+    
+    console.log(`User response to install prompt: ${outcome}`);
+    this.deferredPrompt = null;
+    
+    if (outcome === 'accepted') {
+      this.hideInstallBanner();
+    }
+  }
+
+  isInstalled() {
+    return window.matchMedia('(display-mode: standalone)').matches ||
+           window.navigator.standalone === true;
+  }
+
+  showUpdateNotification() {
+    const notification = document.createElement('div');
+    notification.className = 'update-notification';
+    notification.innerHTML = `
+      <div class="update-content">
+        <i class="fas fa-sync-alt"></i>
+        <span>App updated! Refresh to get the latest version.</span>
+        <button onclick="window.location.reload()">Refresh</button>
+      </div>
+    `;
+    document.body.appendChild(notification);
+    
+    setTimeout(() => notification.classList.add('show'), 100);
+  }
+}
+
+class CopyManager {
+  constructor() {
+    this.setupCopyButtons();
+  }
+
+  setupCopyButtons() {
+    document.querySelectorAll('.copy-btn').forEach(button => {
+      button.addEventListener('click', (e) => this.handleCopy(e));
+    });
+
+    document.querySelectorAll('.copy-btn.small').forEach(button => {
+      button.addEventListener('click', (e) => this.handleSmallCopy(e));
+    });
+  }
+
+  async handleCopy(event) {
+    const button = event.currentTarget;
+    const copyId = button.getAttribute('data-copy');
+    
+    let textToCopy;
+    if (copyId) {
+      const element = document.getElementById(copyId);
+      textToCopy = element ? element.textContent : '';
+    } else {
+      const codeBlock = button.closest('.code-block')?.querySelector('pre code');
+      textToCopy = codeBlock ? codeBlock.textContent : '';
+    }
+
+    await this.copyToClipboard(textToCopy, button);
+  }
+
+  async handleSmallCopy(event) {
+    const button = event.currentTarget;
+    const textToCopy = button.getAttribute('data-copy-text') ||
+                      button.previousElementSibling?.textContent ||
+                      '';
+
+    await this.copyToClipboard(textToCopy, button);
+  }
+
+  async copyToClipboard(text, button) {
+    try {
+      await navigator.clipboard.writeText(text);
+      this.showCopySuccess(button);
+      
+      this.trackCopyEvent(text.substring(0, 50));
+    } catch (error) {
+      console.error('Copy failed:', error);
+      this.showCopyError(button);
+    }
+  }
+
+  showCopySuccess(button) {
+    const originalContent = button.innerHTML;
+    button.innerHTML = '<i class="fas fa-check"></i> Copied!';
+    button.classList.add('copied');
+    
+    setTimeout(() => {
+      button.innerHTML = originalContent;
+      button.classList.remove('copied');
+    }, 2000);
+  }
+
+  showCopyError(button) {
+    const originalContent = button.innerHTML;
+    button.innerHTML = '<i class="fas fa-times"></i> Error';
+    button.style.background = '#ef4444';
+    
+    setTimeout(() => {
+      button.innerHTML = originalContent;
+      button.style.background = '';
+    }, 2000);
+  }
+
+  trackCopyEvent(text) {
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'copy_code', {
+        event_category: 'engagement',
+        event_label: text
+      });
+    }
+  }
+}
+
+class GitHubStatsManager {
+  constructor() {
+    this.repos = [
+      { 
+        name: "CypherX", 
+        repo: "Dark-Xploit/CypherX", 
+        starsElement: "cypherx-stars", 
+        forksElement: "cypherx-forks" 
+      },
+      { 
+        name: "SPACE-MD", 
+        repo: "Dark-Xploit/SPACE-MD", 
+        starsElement: "spacemd-stars", 
+        forksElement: "spacemd-forks" 
+      }
+    ];
+    this.cache = new Map();
+    this.init();
+  }
+
+  init() {
+    this.fetchAllStats();
+    setInterval(() => this.fetchAllStats(), 5 * 60 * 1000);
+  }
+
+  async fetchAllStats() {
+    const promises = this.repos.map(repo => this.fetchRepoStats(repo));
+    await Promise.allSettled(promises);
+  }
+
+  async fetchRepoStats(repoInfo) {
+    const { repo, starsElement, forksElement } = repoInfo;
+    const apiUrl = `https://api.github.com/repos/${repo}`;
+    
+    const starsEl = document.getElementById(starsElement);
+    const forksEl = document.getElementById(forksElement);
+
+    if (starsEl) starsEl.textContent = '...';
+    if (forksEl) forksEl.textContent = '...';
+
+    try {
+      const cached = this.cache.get(repo);
+      if (cached && Date.now() - cached.timestamp < 5 * 60 * 1000) {
+        this.updateElements(cached.data, starsEl, forksEl);
+        return;
+      }
+
+      const response = await fetch(apiUrl);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      const data = await response.json();
+     
+      this.cache.set(repo, {
+        data,
+        timestamp: Date.now()
+      });
+
+      this.updateElements(data, starsEl, forksEl);
+      this.animateNumbers(data, starsEl, forksEl);
+
+    } catch (error) {
+      console.error(`Failed to fetch ${repo} stats:`, error);
+      if (starsEl) starsEl.textContent = 'Error';
+      if (forksEl) forksEl.textContent = 'Error';
+    }
+  }
+
+  updateElements(data, starsEl, forksEl) {
+    if (starsEl) {
+      starsEl.textContent = data.stargazers_count ? 
+        this.formatNumber(data.stargazers_count) : 'N/A';
+    }
+    if (forksEl) {
+      forksEl.textContent = data.forks_count ? 
+        this.formatNumber(data.forks_count) : 'N/A';
+    }
+  }
+
+  animateNumbers(data, starsEl, forksEl) {
+    if (starsEl && data.stargazers_count) {
+      this.animateCounter(starsEl, 0, data.stargazers_count, 1000);
+    }
+    if (forksEl && data.forks_count) {
+      this.animateCounter(forksEl, 0, data.forks_count, 1000);
+    }
+  }
+
+  animateCounter(element, start, end, duration) {
+    const startTime = performance.now();
+    
+    const updateCounter = (currentTime) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      
+      const current = Math.floor(start + (end - start) * this.easeOutCubic(progress));
+      element.textContent = this.formatNumber(current);
+      
+      if (progress < 1) {
+        requestAnimationFrame(updateCounter);
+      }
+    };
+    
+    requestAnimationFrame(updateCounter);
+  }
+
+  easeOutCubic(t) {
+    return 1 - Math.pow(1 - t, 3);
+  }
+
+  formatNumber(num) {
+    if (num >= 1000000) {
+      return (num / 1000000).toFixed(1) + 'M';
+    }
+    if (num >= 1000) {
+      return (num / 1000).toFixed(1) + 'K';
+    }
+    return num.toString();
+  }
+}
+
+class DownloadManager {
+  constructor() {
+    this.repos = [
+      {
+        name: "CypherX",
+        repo: "Dark-Xploit/CypherX",
+        downloadElement: "cypherx-download-zip",
+        fallbackUrl: "https://github.com/Dark-Xploit/CypherX/archive/refs/heads/main.zip",
+        isRelease: true,
+        btnText: "Latest Release"
+      },
+      {
+        name: "SPACE-MD",
+        repo: "Dark-Xploit/SPACE-MD",
+        downloadElement: "spacemd-download-zip",
+        fallbackUrl: "https://github.com/Dark-Xploit/SPACE-MD/archive/refs/heads/main.zip",
+        isRelease: false,
+        btnText: "Source Code"
+      }
+    ];
+    this.init();
+  }
+
+  async init() {
+    const promises = this.repos.map(repo => this.setupDownloadLink(repo));
+    await Promise.allSettled(promises);
+  }
+
+  async setupDownloadLink(repoInfo) {
+    const { repo, downloadElement, fallbackUrl, isRelease, btnText } = repoInfo;
+    const downloadLink = document.getElementById(downloadElement);
+    
+    if (!downloadLink) return;
+
+    downloadLink.textContent = btnText;
+
+    try {
+      let zipUrl = fallbackUrl;
+      
+      if (isRelease) {
+        const apiUrl = `https://api.github.com/repos/${repo}/releases/latest`;
+        const response = await fetch(apiUrl);
+        if (response.ok) {
+          const data = await response.json();
+          zipUrl = data.zipball_url || fallbackUrl;
+        }
+      }
+
+      downloadLink.href = zipUrl;
+      downloadLink.setAttribute('target', '_blank');
+      downloadLink.setAttribute('rel', 'noopener noreferrer');
+      
+      downloadLink.addEventListener('click', () => {
+        this.trackDownload(repo, btnText);
+      });
+
+    } catch (error) {
+      console.error(`Failed to fetch download link for ${repo}:`, error);
+      downloadLink.href = fallbackUrl;
+      downloadLink.setAttribute('target', '_blank');
+      downloadLink.setAttribute('rel', 'noopener noreferrer');
+    }
+  }
+
+  trackDownload(repo, type) {
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'download', {
+        event_category: 'engagement',
+        event_label: `${repo}-${type}`
+      });
+    }
+  }
+}
+
+class TabManager {
+  constructor() {
+    this.setupTabs();
+  }
+
+  setupTabs() {
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const tabId = button.getAttribute('data-tab');
+        this.switchTab(tabId, button);
+      });
+    });
+  }
+
+  switchTab(tabId, activeButton) {
+    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+    activeButton.classList.add('active');
+    const targetTab = document.getElementById(`${tabId}-tab`);
+    if (targetTab) {
+      targetTab.classList.add('active');
+    }
+
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'tab_switch', {
+        event_category: 'engagement',
+        event_label: tabId
+      });
+    }
+  }
+}
+
+class NavigationManager {
+  constructor() {
+    this.setupFloatingNav();
+    this.setupSmoothScroll();
+  }
+
+  setupFloatingNav() {
+    const navItems = document.querySelectorAll('.nav-item');
+    const sections = document.querySelectorAll('section, header');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const sectionId = entry.target.id;
+          this.updateActiveNav(sectionId, navItems);
+        }
+      });
+    }, {
+      threshold: 0.3,
+      rootMargin: '-100px 0px -100px 0px'
+    });
+
+    sections.forEach(section => {
+      if (section.id) {
+        observer.observe(section);
+      }
+    });
+  }
+
+  updateActiveNav(sectionId, navItems) {
+    navItems.forEach(item => {
+      item.classList.remove('active');
+      if (item.getAttribute('href') === `#${sectionId}`) {
+        item.classList.add('active');
+      }
+    });
+  }
+
+  setupSmoothScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = anchor.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  }
+}
+
+class DisclaimerManager {
+  constructor() {
+    this.setupDisclaimer();
+  }
+
+  setupDisclaimer() {
+    const agreeBtn = document.getElementById('disclaimer-agree');
+    if (agreeBtn) {
+      agreeBtn.addEventListener('click', () => {
+        const disclaimerCard = agreeBtn.closest('.disclaimer-card');
+        if (disclaimerCard) {
+          disclaimerCard.style.transform = 'scale(0.95)';
+          disclaimerCard.style.opacity = '0';
+          
+          setTimeout(() => {
+            disclaimerCard.style.display = 'none';
+          }, 300);
+        
+          localStorage.setItem('cypherx-disclaimer-agreed', 'true');
+        }
+      });
+    }
+
+    if (localStorage.getItem('cypherx-disclaimer-agreed') === 'true') {
+      const disclaimerSection = document.querySelector('.disclaimer-section');
+      if (disclaimerSection) {
+        disclaimerSection.style.display = 'none';
+      }
+    }
+  }
+}
+
+class PerformanceMonitor {
+  constructor() {
+    this.init();
+  }
+
+  init() {
+    window.addEventListener('load', () => {
+      setTimeout(() => this.reportPerformance(), 1000);
+    });
+  }
+
+  reportPerformance() {
+    if ('performance' in window) {
+      const navigation = performance.getEntriesByType('navigation')[0];
+      const loadTime = navigation.loadEventEnd - navigation.loadEventStart;
+      
+      console.log(`Page load time: ${loadTime}ms`);
+      
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'page_load_time', {
+          event_category: 'performance',
+          value: Math.round(loadTime)
+        });
+      }
+    }
+  }
+}
+
+class AnimationManager {
+  constructor() {
+    this.setupScrollAnimations();
+    this.setupHoverEffects();
+  }
+
+  setupScrollAnimations() {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.glass-card, .section-header').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(30px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
+    });
+  }
+
+  setupHoverEffects() {
+    document.querySelectorAll('.glass-card').forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        card.style.transform = 'translateY(-8px) scale(1.02)';
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'translateY(0) scale(1)';
+      });
+    });
+  }
+}
+
+class CypherXApp {
+  constructor() {
+    this.managers = {};
+    this.init();
+  }
+
+  async init() {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => this.initializeManagers());
+    } else {
+      this.initializeManagers();
+    }
+  }
+
+  initializeManagers() {
+    try {
+      this.managers.theme = new ThemeManager();
+      this.managers.pwa = new PWAManager();
+      this.managers.copy = new CopyManager();
+      this.managers.githubStats = new GitHubStatsManager();
+      this.managers.download = new DownloadManager();
+      this.managers.tabs = new TabManager();
+      this.managers.navigation = new NavigationManager();
+      this.managers.disclaimer = new DisclaimerManager();
+      this.managers.performance = new PerformanceMonitor();
+      this.managers.animation = new AnimationManager();
+      
+      console.log('CypherX App initialized successfully');
+    } catch (error) {
+      console.error('Failed to initialize CypherX App:', error);
+    }
+  }
+}
+
+const app = new CypherXApp();
+
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { CypherXApp };
+}
+</script>
+
+</body></html>
